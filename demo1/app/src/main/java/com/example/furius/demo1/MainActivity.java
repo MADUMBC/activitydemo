@@ -1,17 +1,49 @@
-package com.example.furius.myapplication;
+package com.example.furius.demo1;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    //button
+    //public void button1Click(View v){
+      //  TextView toChange = (TextView)findViewById(R.id.textView1);
+        //toChange.setText("Clicked");
+    //}
+    private Button button;
+    private Button actButton;
+    private TextView textview;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.button = (Button) findViewById(R.id.button);
+        this.textview = (TextView) findViewById(R.id.textView1);
+        this.actButton = (Button) findViewById(R.id.button2);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                textview.setText(R.string.clicked);
+            }
+        });
+        actButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,MainActivity2Activity.class);
+                startActivity(i);
+            }
+        });
+
     }
 
 

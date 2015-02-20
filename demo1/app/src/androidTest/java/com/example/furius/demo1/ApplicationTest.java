@@ -1,4 +1,4 @@
-package com.example.furius.myapplication;
+package com.example.furius.demo1;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
